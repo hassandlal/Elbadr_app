@@ -1,10 +1,10 @@
 import 'package:elbadr_app/layout/cubit/cubit.dart';
 import 'package:elbadr_app/layout/cubit/states.dart';
 import 'package:elbadr_app/models/Companies_model.dart';
-import 'package:elbadr_app/modules/AboutUs_Screen.dart';
-import 'package:elbadr_app/modules/Contact_us.dart';
+import 'package:elbadr_app/modules/About_us/AboutUs_Screen.dart';
+import 'package:elbadr_app/modules/Contact_us/Contact_us.dart';
 import 'package:elbadr_app/modules/Search_Screen/Search_Screen.dart';
-import 'package:elbadr_app/modules/maintenance_screen.dart';
+import 'package:elbadr_app/modules/maintenance/maintenance_screen.dart';
 import 'package:elbadr_app/shared/components/components.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

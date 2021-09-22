@@ -8,7 +8,7 @@ import 'package:elbadr_app/modules/Dte_Screen.dart';
 import 'package:elbadr_app/modules/HAHNENKRATT_Screen.dart';
 import 'package:elbadr_app/modules/TehnoDent_Screen.dart';
 import 'package:elbadr_app/modules/Zafdent_Screen/Zafdent_Screen.dart';
-import 'package:elbadr_app/modules/Zumax_Screen.dart';
+import 'package:elbadr_app/modules/zumax/Zumax_Screen.dart';
 import 'package:elbadr_app/modules/denjoy/denjoy_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

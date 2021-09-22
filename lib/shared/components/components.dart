@@ -3,8 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'dart:io' show Platform;
 import 'package:flutter/foundation.dart' show kIsWeb;
+
 Widget drawListTile(
-    {Widget? leadingicon, Widget? title, Widget? subtitle, Widget? trailingicon}){
+    {Widget? leadingicon,
+    Widget? title,
+    Widget? subtitle,
+    Widget? trailingicon}) {
   return Padding(
     padding: const EdgeInsets.all(8.0),
     child: ListTile(
@@ -15,30 +19,32 @@ Widget drawListTile(
     ),
   );
 }
-Widget drawDivider(){
+
+Widget drawDivider() {
   return Container(
     width: double.infinity,
     height: 1,
     color: Colors.grey,
   );
 }
+
 void navigateTo(context, widget) => Navigator.push(
-  context,
-  MaterialPageRoute(
-    builder: (context) => widget,
-  ),
-);
+      context,
+      MaterialPageRoute(
+        builder: (context) => widget,
+      ),
+    );
 
 void navigateAndFinish(
-    context,
-    widget,
-    ) =>
+  context,
+  widget,
+) =>
     Navigator.pushAndRemoveUntil(
       context,
       MaterialPageRoute(
         builder: (context) => widget,
       ),
-          (route) {
+      (route) {
         return false;
       },
     );
@@ -57,6 +63,7 @@ void showToast({
       fontSize: 16.0,
     );
 enum ToastStates { SUCCESS, ERROR, WARNING }
+
 Color chooseToastColor(ToastStates state) {
   Color color;
 
@@ -76,39 +83,55 @@ Color chooseToastColor(ToastStates state) {
 }
 
 Widget myDivider() => Padding(
-  padding: const EdgeInsetsDirectional.only(
-    start: 20.0,
-  ),
-  child: Container(
-    width: double.infinity,
-    height: 1.0,
-    color: Colors.grey[300],
-  ),
-);
-Widget buildListProduct(
-    ProductModel model,
-    context) =>
-    Padding(
+      padding: const EdgeInsetsDirectional.only(
+        start: 20.0,
+      ),
+      child: Container(
+        width: double.infinity,
+        height: 1.0,
+        color: Colors.grey[300],
+      ),
+    );
+
+Widget buildListProduct(ProductModel model, context) => Padding(
       padding: const EdgeInsets.all(10.0),
       child: Column(
         children: [
           Image(
             image: AssetImage(model.imageUrl),
-            width:  MediaQuery.of(context).size.width*0.94,
-            height:  kIsWeb?MediaQuery.of(context).size.height*0.7:MediaQuery.of(context).size.height*0.6,
+            width: MediaQuery.of(context).size.width * 0.94,
+            height: kIsWeb
+                ? MediaQuery.of(context).size.height * 0.7
+                : MediaQuery.of(context).size.height * 0.6,
             fit: BoxFit.cover,
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.only(top: 8.0),
             child: Container(
-              child: Text(
-                model.name,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20.0,
-                  height: 1.3,
+              // width: MediaQuery.of(context).size.width*0.50,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+              ),
+              child: Center(
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.blueAccent[100],
+                  ),
+
+                  child: Padding(
+                    padding: const EdgeInsets.all(3.0),
+                    child: Text(
+                      model.name,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20.0,
+                        height: 1.2,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),
