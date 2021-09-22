@@ -1,6 +1,8 @@
 import 'package:elbadr_app/models/Product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'dart:io' show Platform;
+import 'package:flutter/foundation.dart' show kIsWeb;
 Widget drawListTile(
     {Widget? leadingicon, Widget? title, Widget? subtitle, Widget? trailingicon}){
   return Padding(
@@ -88,36 +90,29 @@ Widget buildListProduct(
     context) =>
     Padding(
       padding: const EdgeInsets.all(10.0),
-      child: Container(
-        height: MediaQuery.of(context).size.height*0.4,
-        child: Row(
-          children: [
-            Stack(
-             // alignment: AlignmentDirectional.,
-              children: [
-                Image(
-                  image: AssetImage(model.imageUrl),
-                  width:  MediaQuery.of(context).size.width*0.94,
-                  height:  MediaQuery.of(context).size.height*0.6,
-                  fit: BoxFit.cover,
+      child: Column(
+        children: [
+          Image(
+            image: AssetImage(model.imageUrl),
+            width:  MediaQuery.of(context).size.width*0.94,
+            height:  kIsWeb?MediaQuery.of(context).size.height*0.7:MediaQuery.of(context).size.height*0.6,
+            fit: BoxFit.cover,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              child: Text(
+                model.name,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20.0,
+                  height: 1.3,
                 ),
-                Container(
-                  child: Text(
-                    model.name,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20.0,
-                      height: 1.3,
-                    ),
-                  ),
-                ),
-
-              ],
+              ),
             ),
-
-          ],
-        ),
+          ),
+        ],
       ),
     );

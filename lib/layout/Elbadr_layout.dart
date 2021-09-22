@@ -79,7 +79,7 @@ class MyHomePage extends StatelessWidget {
                         size: 45,
                       ),
                       onPressed: () {
-                       _launchURL('http://elbadr.co/');
+                        AppCubit.get(context).launchURL('http://elbadr.co/');
                        print("Pressed");
                       }),
                   IconButton(
@@ -92,7 +92,7 @@ class MyHomePage extends StatelessWidget {
                       ),
                       onPressed: () {
                         print("Pressed");
-                        _launchURL('https://www.instagram.com/elbadregypt/');
+                        AppCubit.get(context).launchURL('https://www.instagram.com/elbadregypt/');
                       }),
                   IconButton(
                       // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
@@ -102,7 +102,7 @@ class MyHomePage extends StatelessWidget {
                         size: 45,
                       ),
                       onPressed: () {
-                        _launchURL('tel:$_phone');
+                        AppCubit.get(context).launchURL('tel:${AppCubit.get(context).phone}');
                         print("Pressed");
                       }),
                 ],
@@ -135,6 +135,7 @@ class MyHomePage extends StatelessWidget {
           return Column(
             children: [
               Container(
+                width: MediaQuery.of(context).size.width*1,
                 height: size.height * 0.1,
                 child: ListView.builder(
                   itemBuilder: (ctx, index) {
@@ -147,9 +148,9 @@ class MyHomePage extends StatelessWidget {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Expanded(child: Image.asset(Companies[index].imagepath)),
+                            Expanded(child: Image.asset(AppCubit.get(context).Companies[index].imagepath)),
                             Text(
-                              Companies[index].name,
+                              AppCubit.get(context).Companies[index].name,
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 15),
                             ),
@@ -158,7 +159,7 @@ class MyHomePage extends StatelessWidget {
                       ),
                     );
                   },
-                  itemCount: Companies.length,
+                  itemCount: AppCubit.get(context).Companies.length,
                   scrollDirection: Axis.horizontal,
                 ),
 
@@ -174,18 +175,5 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-List<Company> Companies = [
-  Company('Zafdent','assets/images/zafdent.jpg'),
-  Company('denjoy', 'assets/images/denjoy.jpg'),
-  Company('DTE (WOODPECKER)', 'assets/images/dte.png'),
-  Company('BemLase', 'assets/images/bemlase.jpg'),
-  Company('Zumax', 'assets/images/zumax.png'),
-  Company('HAHNENKRATT', 'assets/images/HAHNENKRATT.jpg'),
-  Company('TehnoDent', 'assets/images/tehnodent.png'),
-  Company('Bausch', 'assets/images/bausch.png'),
-  Company('AMANNGIRRBACH', 'assets/images/amangirbach.jpg'),
-];
-//Image.asset('assets/images/Elbadr.png'),
-void _launchURL(String url) async =>
-    await canLaunch(url) ? await launch(url) : throw 'Could not launch ';
-String _phone = '01206666002';
+
+
