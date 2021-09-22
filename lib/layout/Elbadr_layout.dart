@@ -24,16 +24,17 @@ class MyHomePage extends StatelessWidget {
           //crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.only(top:16.0),
+              padding: const EdgeInsets.only(top: 16.0),
               child: Container(
-                height: size.height*0.4,
+                height: size.height * 0.4,
                 child: Image.asset('assets/images/Elbadr.png'),
               ),
             ),
             InkWell(
-              onTap: (){navigateTo(context, AboutUsScreen());},
+              onTap: () {
+                navigateTo(context, AboutUsScreen());
+              },
               child: drawListTile(
-
                   title: Text(
                 'About us',
                 style: TextStyle(
@@ -44,7 +45,9 @@ class MyHomePage extends StatelessWidget {
             ),
             drawDivider(),
             InkWell(
-              onTap: (){navigateTo(context, contactUs());},
+              onTap: () {
+                navigateTo(context, contactUs());
+              },
               child: drawListTile(
                   title: Text(
                 'Contact us',
@@ -56,7 +59,9 @@ class MyHomePage extends StatelessWidget {
             ),
             drawDivider(),
             InkWell(
-              onTap: (){navigateTo(context, MaintenanceScreen());},
+              onTap: () {
+                navigateTo(context, MaintenanceScreen());
+              },
               child: drawListTile(
                   title: Text(
                 'Maintenance',
@@ -80,19 +85,19 @@ class MyHomePage extends StatelessWidget {
                       ),
                       onPressed: () {
                         AppCubit.get(context).launchURL('http://elbadr.co/');
-                       print("Pressed");
+                        print("Pressed");
                       }),
                   IconButton(
                       // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
                       icon: FaIcon(
-
                         FontAwesomeIcons.instagram,
                         color: Colors.redAccent,
                         size: 45,
                       ),
                       onPressed: () {
                         print("Pressed");
-                        AppCubit.get(context).launchURL('https://www.instagram.com/elbadregypt/');
+                        AppCubit.get(context).launchURL(
+                            'https://www.instagram.com/elbadregypt/');
                       }),
                   IconButton(
                       // Use the FaIcon Widget + FontAwesomeIcons class for the IconData
@@ -102,7 +107,8 @@ class MyHomePage extends StatelessWidget {
                         size: 45,
                       ),
                       onPressed: () {
-                        AppCubit.get(context).launchURL('tel:${AppCubit.get(context).phone}');
+                        AppCubit.get(context)
+                            .launchURL('tel:${AppCubit.get(context).phone}');
                         print("Pressed");
                       }),
                 ],
@@ -114,7 +120,7 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right:15.0),
+            padding: const EdgeInsets.only(right: 15.0),
             child: IconButton(
                 onPressed: () {
                   navigateTo(context, SearchScreen());
@@ -122,39 +128,56 @@ class MyHomePage extends StatelessWidget {
                 icon: Icon(FontAwesomeIcons.search)),
           )
         ],
-       // leading: Image.asset('assets/images/Elbadr.png'),
+        // leading: Image.asset('assets/images/Elbadr.png'),
         title: Text(
           'El Badr',
           style: TextStyle(
-              color: Colors.red, fontSize: 25, fontWeight: FontWeight.bold,fontStyle: FontStyle.italic),
+              color: Colors.red,
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+              fontStyle: FontStyle.italic),
         ),
         centerTitle: true,
       ),
-      body: BlocConsumer<AppCubit,AppStates>(
-        builder: (context,states){
+      body: BlocConsumer<AppCubit, AppStates>(
+        builder: (context, states) {
           return Column(
             children: [
               Container(
-                width: MediaQuery.of(context).size.width*1,
+                width: MediaQuery.of(context).size.width * 1,
                 height: size.height * 0.1,
                 child: ListView.builder(
                   itemBuilder: (ctx, index) {
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: InkWell(
-                        onTap: (){
+                        onTap: () {
                           AppCubit.get(context).changeBottom(index);
                         },
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Expanded(child: Image.asset(AppCubit.get(context).Companies[index].imagepath)),
-                            Text(
-                              AppCubit.get(context).Companies[index].name,
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 15),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: AppCubit.get(context).currentIndex == index
+                                ? Colors.blueAccent
+                                : Colors.white,
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(3.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                    child: Image.asset(AppCubit.get(context)
+                                        .Companies[index]
+                                        .imagepath)),
+                                Text(
+                                  AppCubit.get(context).Companies[index].name,
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold, fontSize: 15),
+                                ),
+                              ],
                             ),
-                          ],
+                          ),
                         ),
                       ),
                     );
@@ -162,18 +185,14 @@ class MyHomePage extends StatelessWidget {
                   itemCount: AppCubit.get(context).Companies.length,
                   scrollDirection: Axis.horizontal,
                 ),
-
               ),
-              AppCubit.get(context).bottomScreens[AppCubit.get(context).currentIndex],
-
+              AppCubit.get(context)
+                  .bottomScreens[AppCubit.get(context).currentIndex],
             ],
           );
         },
-        listener: (context,states){},
+        listener: (context, states) {},
       ),
     );
   }
 }
-
-
-
