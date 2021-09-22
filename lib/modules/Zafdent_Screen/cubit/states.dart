@@ -1,2 +1,2 @@
-abstract class zafDentStates{}
-class zafDentInitialState extends zafDentStates {}
+abstract class ZafDentStates{}
+class ZafDentInitialState extends ZafDentStates {}

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class contactUs extends StatelessWidget {
-  const contactUs({Key? key}) : super(key: key);
+class ContactUs extends StatelessWidget {
+  const ContactUs({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,18 +13,18 @@ class contactUs extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _drawRowItems(
+              _DrawRowItems(
                 title: 'Address :',
                 subTitle:
                     'Seuz Qanal St. front of Elkheir hospital Elymama tower 1st floor ,Mansoura, Egypt',
                 icon: Icons.location_on_outlined,
               ),
-              _drawRowItems(
+              _DrawRowItems(
                 title: 'Phone :',
                 subTitle: ' +2 050 2507574 / 0120 6666 002',
                 icon: Icons.phone,
               ),
-              _drawRowItems(
+              _DrawRowItems(
                 title: 'Email :',
                 subTitle: ' info@elbadr.co',
                 icon: Icons.email,
@@ -45,12 +45,12 @@ class contactUs extends StatelessWidget {
   }
 }
 
-class _drawRowItems extends StatelessWidget {
+class _DrawRowItems extends StatelessWidget {
   final String title;
   final String subTitle;
   final IconData icon;
 
-  const _drawRowItems(
+  const _DrawRowItems(
       {Key? key,
       required this.title,
       required this.subTitle,

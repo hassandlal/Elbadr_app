@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+
 class ProductModel {
   late final String name;
   late final String imageUrl;

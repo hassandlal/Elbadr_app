@@ -3,10 +3,10 @@ import 'package:elbadr_app/models/Product_model.dart';
 import 'package:elbadr_app/modules/Zafdent_Screen/cubit/states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class zafDentCubit extends Cubit<zafDentStates> {
-  zafDentCubit() : super(zafDentInitialState());
+class ZafDentCubit extends Cubit<ZafDentStates> {
+  ZafDentCubit() : super(ZafDentInitialState());
 
-  static zafDentCubit get(context) => BlocProvider.of(context);
+  static ZafDentCubit get(context) => BlocProvider.of(context);
   List<ProductModel> zafDentProducts = [
     ProductModel('A New Unit', 'assets/images/zafdent/anewunit.jpg', 'A New Unit'),
     ProductModel('A Unit', 'assets/images/zafdent/aunit.jpg', 'A Unit'),

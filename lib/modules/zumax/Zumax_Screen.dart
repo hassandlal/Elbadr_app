@@ -10,19 +10,19 @@ class ZumaxScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => zumaxCubit(),
-      child: BlocConsumer<zumaxCubit, zumaxStates>(
+      create: (BuildContext context) => ZumaxCubit(),
+      child: BlocConsumer<ZumaxCubit, ZumaxStates>(
         listener: (context, state) {},
         builder: (context, state) {
           return Expanded(
             child: ListView.separated(
                 itemBuilder: (context, index) {
-                  return buildListProduct(zumaxCubit.get(context).zumaxProducts[index],context);
+                  return buildListProduct(ZumaxCubit.get(context).zumaxProducts[index],context);
                 },
                 separatorBuilder: (context, int) {
                   return myDivider();
                 },
-                itemCount: zumaxCubit.get(context).zumaxProducts.length),
+                itemCount: ZumaxCubit.get(context).zumaxProducts.length),
           );
         },
       ),

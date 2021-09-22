@@ -19,7 +19,7 @@ class AppCubit extends Cubit<AppStates> {
 
   static AppCubit get(context) => BlocProvider.of(context);
   int currentIndex = 0;
-  List<Company> Companies = [
+  List<Company> companies = [
     Company('Zafdent','assets/images/zafdent.jpg'),
     Company('denjoy', 'assets/images/denjoy.jpg'),
     Company('DTE (WOODPECKER)', 'assets/images/dte.png'),

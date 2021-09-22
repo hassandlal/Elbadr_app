@@ -1,6 +1,5 @@
 import 'package:elbadr_app/layout/cubit/cubit.dart';
 import 'package:elbadr_app/layout/cubit/states.dart';
-import 'package:elbadr_app/models/Companies_model.dart';
 import 'package:elbadr_app/modules/About_us/AboutUs_Screen.dart';
 import 'package:elbadr_app/modules/Contact_us/Contact_us.dart';
 import 'package:elbadr_app/modules/Search_Screen/Search_Screen.dart';
@@ -10,7 +9,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:url_launcher/url_launcher.dart';
+
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -46,7 +45,7 @@ class MyHomePage extends StatelessWidget {
             drawDivider(),
             InkWell(
               onTap: () {
-                navigateTo(context, contactUs());
+                navigateTo(context, ContactUs());
               },
               child: drawListTile(
                   title: Text(
@@ -168,10 +167,10 @@ class MyHomePage extends StatelessWidget {
                               children: [
                                 Expanded(
                                     child: Image.asset(AppCubit.get(context)
-                                        .Companies[index]
+                                        .companies[index]
                                         .imagepath)),
                                 Text(
-                                  AppCubit.get(context).Companies[index].name,
+                                  AppCubit.get(context).companies[index].name,
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold, fontSize: 15),
                                 ),
@@ -182,7 +181,7 @@ class MyHomePage extends StatelessWidget {
                       ),
                     );
                   },
-                  itemCount: AppCubit.get(context).Companies.length,
+                  itemCount: AppCubit.get(context).companies.length,
                   scrollDirection: Axis.horizontal,
                 ),
               ),

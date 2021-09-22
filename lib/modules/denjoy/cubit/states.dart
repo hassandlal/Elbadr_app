@@ -1,2 +1,2 @@
-abstract class denjoyStates{}
-class denjoyInitialState extends denjoyStates {}
+abstract class DenjoyStates{}
+class DenjoyInitialState extends DenjoyStates {}

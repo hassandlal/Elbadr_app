@@ -11,19 +11,19 @@ class ZafdentScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => zafDentCubit(),
-      child: BlocConsumer<zafDentCubit, zafDentStates>(
+      create: (BuildContext context) => ZafDentCubit(),
+      child: BlocConsumer<ZafDentCubit, ZafDentStates>(
         listener: (context, state) {},
         builder: (context, state) {
           return Expanded(
             child: ListView.separated(
                 itemBuilder: (context, index) {
-                  return buildListProduct(zafDentCubit.get(context).zafDentProducts[index],context);
+                  return buildListProduct(ZafDentCubit.get(context).zafDentProducts[index],context);
                 },
                 separatorBuilder: (context, int) {
                   return myDivider();
                 },
-                itemCount: zafDentCubit.get(context).zafDentProducts.length),
+                itemCount: ZafDentCubit.get(context).zafDentProducts.length),
           );
         },
       ),

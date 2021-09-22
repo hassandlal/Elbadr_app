@@ -1,2 +1,2 @@
-abstract class zumaxStates{}
-class zumaxInitialState extends zumaxStates {}
+abstract class ZumaxStates{}
+class ZumaxInitialState extends ZumaxStates {}

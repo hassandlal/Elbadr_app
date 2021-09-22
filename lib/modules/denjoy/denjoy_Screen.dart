@@ -10,19 +10,19 @@ class DenjoyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (BuildContext context) => denjoyCubit(),
-      child: BlocConsumer<denjoyCubit, denjoyStates>(
+      create: (BuildContext context) => DenjoyCubit(),
+      child: BlocConsumer<DenjoyCubit,DenjoyStates>(
         listener: (context, state) {},
         builder: (context, state) {
           return Expanded(
             child: ListView.separated(
                 itemBuilder: (context, index) {
-                  return buildListProduct(denjoyCubit.get(context).denjoyProducts[index],context);
+                  return buildListProduct(DenjoyCubit.get(context).denjoyProducts[index],context);
                 },
                 separatorBuilder: (context, int) {
                   return myDivider();
                 },
-                itemCount: denjoyCubit.get(context).denjoyProducts.length),
+                itemCount: DenjoyCubit.get(context).denjoyProducts.length),
           );
         },
       ),

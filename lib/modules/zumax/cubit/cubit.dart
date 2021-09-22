@@ -3,10 +3,10 @@ import 'package:elbadr_app/models/Product_model.dart';
 import 'package:elbadr_app/modules/zumax/cubit/states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class zumaxCubit extends Cubit<zumaxStates> {
-  zumaxCubit() : super(zumaxInitialState());
+class ZumaxCubit extends Cubit<ZumaxStates> {
+  ZumaxCubit() : super(ZumaxInitialState());
 
-  static zumaxCubit get(context) => BlocProvider.of(context);
+  static ZumaxCubit get(context) => BlocProvider.of(context);
   List<ProductModel> zumaxProducts = [
     ProductModel('head-light-8200', 'assets/images/zumax/head-light-8200.jpg', 'head-light-8200'),
     ProductModel('head-light-8300', 'assets/images/zumax/head-light-8300.jpg', 'head-light-8300'),

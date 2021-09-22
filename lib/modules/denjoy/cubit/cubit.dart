@@ -3,10 +3,10 @@ import 'package:elbadr_app/models/Product_model.dart';
 import 'package:elbadr_app/modules/denjoy/cubit/states.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class denjoyCubit extends Cubit<denjoyStates> {
-  denjoyCubit() : super(denjoyInitialState());
+class DenjoyCubit extends Cubit<DenjoyStates> {
+  DenjoyCubit() : super(DenjoyInitialState());
 
-  static denjoyCubit get(context) => BlocProvider.of(context);
+  static DenjoyCubit get(context) => BlocProvider.of(context);
   List<ProductModel> denjoyProducts = [
     ProductModel('Apex Locator IFinder', 'assets/images/denjoy/Apex-Locator-ifinder.jpg', 'A New Unit'),
     ProductModel('IMate 3 Cordless Endo Motor', 'assets/images/denjoy/iMate-cordless-endo-motor.jpg', 'A Unit'),
