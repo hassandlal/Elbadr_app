@@ -7,7 +7,7 @@ class HanenkratCubit extends Cubit<HanenkratStates> {
   HanenkratCubit() : super(HanenkratInitialState());
 
   static HanenkratCubit get(context) => BlocProvider.of(context);
-  List<ProductModel> HanenkratProducts = [
+  List<ProductModel> hanenkratProducts = [
     ProductModel('head-light-8200', 'assets/images/zumax/head-light-8200.jpg', 'head-light-8200'),
     ProductModel('head-light-8300', 'assets/images/zumax/head-light-8300.jpg', 'head-light-8300'),
     ProductModel('Ohl-8000-1', 'assets/images/zumax/hl-8000-1.jpg', 'hl-8000-1'),

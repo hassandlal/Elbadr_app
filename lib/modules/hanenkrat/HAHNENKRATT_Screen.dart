@@ -16,12 +16,12 @@ class HahnenkrattScreen extends StatelessWidget {
           return Expanded(
             child: ListView.separated(
                 itemBuilder: (context, index) {
-                  return buildListProduct(HanenkratCubit.get(context).HanenkratProducts[index],context);
+                  return buildListProduct(HanenkratCubit.get(context).hanenkratProducts[index],context);
                 },
                 separatorBuilder: (context, int) {
                   return myDivider();
                 },
-                itemCount: HanenkratCubit.get(context).HanenkratProducts.length),
+                itemCount: HanenkratCubit.get(context).hanenkratProducts.length),
           );
         },
       ),
