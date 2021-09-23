@@ -8,14 +8,22 @@ class HanenkratCubit extends Cubit<HanenkratStates> {
 
   static HanenkratCubit get(context) => BlocProvider.of(context);
   List<ProductModel> hanenkratProducts = [
-    ProductModel('head-light-8200', 'assets/images/zumax/head-light-8200.jpg', 'head-light-8200'),
-    ProductModel('head-light-8300', 'assets/images/zumax/head-light-8300.jpg', 'head-light-8300'),
-    ProductModel('Ohl-8000-1', 'assets/images/zumax/hl-8000-1.jpg', 'hl-8000-1'),
-    ProductModel('microscope9', 'assets/images/zumax/microscope9.jpg', 'microscope9'),
-    ProductModel('retrival-kit', 'assets/images/zumax/retrival-kit.jpg', 'retrival-kit'),
-    ProductModel('SLF-2', 'assets/images/zumax/SLF-2.jpg', 'SLF-2'),
-    ProductModel('SLH-1', 'assets/images/zumax/SLH-1.jpg', 'SLH-1'),
-    ProductModel('ttl2', 'assets/images/zumax/ttl2.jpg', 'ttl2'),
-
+    ProductModel('economy', 'assets/images/henenkrat/economy.jpg',
+        'economy'),
+    ProductModel('ExaPin-Drillparapulpal-Pin', 'assets/images/henenkrat/ExaPin-Drillparapulpal-Pin.jpg',
+        'ExaPin-Drillparapulpal-Pin'),
+    ProductModel(
+        'fiber2-2', 'assets/images/henenkrat/fiber2-2.jpg', 'fiber2-2'),
+    ProductModel(
+        'handle', 'assets/images/henenkrat/handle.jpg', 'handle'),
+    ProductModel(
+        'matrix', 'assets/images/henenkrat/matrix.jpg', 'matrix'),
+    ProductModel('mega', 'assets/images/henenkrat/mega.jpg', 'mega'),
+    ProductModel('provisa', 'assets/images/henenkrat/provisa.jpg', 'provisa'),
+    ProductModel('pullover', 'assets/images/henenkrat/pullover.jpg', 'pullover'),
+    ProductModel('relax-1', 'assets/images/henenkrat/relax-1.jpg', 'relax-1'),
+    ProductModel('sharp', 'assets/images/henenkrat/sharp.jpg', 'sharp'),
+    ProductModel('titanium-s', 'assets/images/henenkrat/titanium-s.jpg', 'titanium-s'),
+    ProductModel('ultra', 'assets/images/henenkrat/ultra.jpg', 'ultra'),
   ];
 }
