@@ -100,8 +100,8 @@ Widget buildListProduct(ProductModel model, context) => Padding(
             image: AssetImage(model.imageUrl),
             width: MediaQuery.of(context).size.width * 0.94,
             height: kIsWeb
-                ? MediaQuery.of(context).size.height * 0.7
-                : MediaQuery.of(context).size.height * 0.6,
+                ? MediaQuery.of(context).size.height * 0.4
+                : MediaQuery.of(context).size.height * 0.5,
             fit: BoxFit.cover,
           ),
           Padding(
