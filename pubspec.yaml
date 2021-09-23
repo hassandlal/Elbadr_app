@@ -70,6 +70,12 @@ flutter:
     - assets/images/zafdent/
     - assets/images/denjoy/
     - assets/images/zumax/
+    - assets/images/amanngirrbach/
+    - assets/images/bausch/
+    - assets/images/bemlase/
+    - assets/images/dte/
+    - assets/images/henenkrat/
+    - assets/images/tehnodent/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
