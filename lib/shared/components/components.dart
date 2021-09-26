@@ -1,4 +1,5 @@
 import 'package:elbadr_app/models/Product_model.dart';
+import 'package:elbadr_app/modules/item_details_Screen/item_details_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -94,47 +95,52 @@ Widget myDivider() => Padding(
 
 Widget buildListProduct(ProductModel model, context) => Padding(
       padding: const EdgeInsets.all(10.0),
-      child: Column(
-        children: [
-          Image(
-            image: AssetImage(model.imageUrl),
-            width: MediaQuery.of(context).size.width * 0.94,
-            height: kIsWeb
-                ? MediaQuery.of(context).size.height * 0.4
-                : MediaQuery.of(context).size.height * 0.5,
-            fit: BoxFit.cover,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(top: 8.0),
-            child: Container(
-              // width: MediaQuery.of(context).size.width*0.50,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
-              ),
-              child: Center(
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: Colors.blueAccent[100],
-                  ),
+      child: InkWell(
+        onTap: (){
+          navigateTo(context, ItemDetailsScreen(model: model,));
+        },
+        child: Column(
+          children: [
+            Image(
+              image: AssetImage(model.imageUrl),
+              width: MediaQuery.of(context).size.width * 0.94,
+              height: kIsWeb
+                  ? MediaQuery.of(context).size.height * 0.4
+                  : MediaQuery.of(context).size.height * 0.5,
+              fit: BoxFit.cover,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: Container(
+                // width: MediaQuery.of(context).size.width*0.50,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                ),
+                child: Center(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.blueAccent[100],
+                    ),
 
-                  child: Padding(
-                    padding: const EdgeInsets.all(3.0),
-                    child: Text(
-                      model.name,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20.0,
-                        height: 1.2,
+                    child: Padding(
+                      padding: const EdgeInsets.all(3.0),
+                      child: Text(
+                        model.name,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20.0,
+                          height: 1.2,
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
